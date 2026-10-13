@@ -1,50 +1,105 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veronika Leśniak</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    padding: 40px;
-    background: #f8f8f8;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+    <title>Veronika Leśniak</title>
 
-h1 {
-    margin-bottom: 40px;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+        }
 
-.gallery img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-}
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f8f8;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-footer {
-    margin-top: 60px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-</style>
-</head>
+        header {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-<body>
+        h1 {
+            margin: 0;
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
 
-<h1>VERONIKA LEŚNIAK</h1>
+        main {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px 30px 60px;
+            flex: 1;
+        }
 
-<div class="gallery">
-    <img src="art1.jpg" alt="Artwork 1">
-    <img src="art2.jpg" alt="Artwork 2">
-    <img src="art3.jpg" alt="Artwork 3">
-    <img src="art4.jpg"html>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+
+        .artwork {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .artwork img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .artwork:hover img {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        footer {
+            width: 100%;
+            padding: 32px 20px;
+            border-top: 1px solid #d8d8d8;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin: 0 0 12px;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        footer a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1000px) {
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width
